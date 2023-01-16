@@ -1,8 +1,6 @@
 pipeline {
     agent any
-    parameters {
-  gitParameter branch: 'BRANCH_NAME', branchFilter: '.*', defaultValue: 'origin/master', description: 'Choose the branch', name: 'BRANCH', quickFilterEnabled: true, selectedValue: 'DEFAULT', sortMode: 'NONE', tagFilter: '*', type: 'GitParameterDefinition', useRepository: 'https://github.com/sai366chawan/test-jenkins.git'
-}
+
     stages {
 
         stage('Checkout')
