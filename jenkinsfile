@@ -10,7 +10,7 @@ pipeline {
                 script
                 {
                     cleanWs cleanWhenAborted: false, cleanWhenFailure: false, cleanWhenNotBuilt: false, cleanWhenSuccess: false, cleanWhenUnstable: false
-                    git branch: "$params.BRANCH_NAME", credentialsId: "sai_jenkins", url: "https://github.com/sai366chawan/test-jenkins.git"
+                    git branch: "$params.Branch_Name", credentialsId: "", url: "https://github.com/sai366chawan/test-jenkins.git"
                 }
             }
         }
