@@ -1,0 +1,21 @@
+pipeline {
+    agent any
+    parameters {
+  gitParameter branch: 'BRANCH_NAME', branchFilter: '.*', defaultValue: 'origin/master', description: 'Choose the branch', name: 'BRANCH', quickFilterEnabled: true, selectedValue: 'DEFAULT', sortMode: 'NONE', tagFilter: '*', type: 'GitParameterDefinition', useRepository: 'https://github.com/sai366chawan/test-jenkins.git'
+}
+    stages {
+
+        stage('Checkout')
+        {
+            steps
+            {
+                script
+                {
+                    cleanWs cleanWhenAborted: false, cleanWhenFailure: false, cleanWhenNotBuilt: false, cleanWhenSuccess: false, cleanWhenUnstable: false
+                    git branch: "$params.BRANCH_NAME", credentialsId: "sai_jenkins", url: "https://github.com/sai366chawan/test-jenkins.git"
+                }
+            }
+        }
+    }
+}
+
